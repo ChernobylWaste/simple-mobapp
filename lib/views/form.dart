@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplemobapp/route/route.dart' as route;
+import 'package:simplemobapp/navbar.dart';
 
 class Formulir extends StatelessWidget {
   Formulir({super.key});
@@ -7,6 +8,7 @@ class Formulir extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
       appBar: AppBar(
         title: Text('Form'),
       ),

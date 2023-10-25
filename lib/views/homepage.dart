@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simplemobapp/route/route.dart' as route;
+// import 'package:simplemobapp/route/route.dart' as route;
 import 'package:simplemobapp/navbar.dart';
 
 class HomePage extends StatelessWidget {
