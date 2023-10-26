@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:simplemobapp/route/route.dart' as route;
 import 'package:simplemobapp/navbar.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Formulir extends StatefulWidget {
   Formulir({super.key});
@@ -10,6 +13,18 @@ class Formulir extends StatefulWidget {
 }
 
 class _FormulirState extends State<Formulir> {
+  File? image;
+
+  Future getImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? imagePicked =
+        await _picker.pickImage(source: ImageSource.gallery);
+    if (imagePicked != null) {
+      image = File(imagePicked.path);
+      setState(() {});
+    }
+  }
+
   String? _jk = "";
 
   TextEditingController controllerNama = TextEditingController();
@@ -32,11 +47,11 @@ class _FormulirState extends State<Formulir> {
               children: [
                 Text("Nama Lengkap : ${controllerNama.text}"),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Text("NIM : ${controllernim.text}"),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Text("Jenis Kelamin : $_jk"),
                 SizedBox(
@@ -44,7 +59,7 @@ class _FormulirState extends State<Formulir> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.pushNamed(context, route.hp);
                   },
                   child: Text("OK"),
                 ),
@@ -114,6 +129,37 @@ class _FormulirState extends State<Formulir> {
                   },
                   activeColor: Colors.red,
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Text("Upload Photo", style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TextButton(
+                    style: TextButton.styleFrom(
+                        backgroundColor: Colors.blueAccent),
+                    onPressed: () async {
+                      await getImage();
+                    },
+                    child: Text(
+                      "Open Image",
+                      style: TextStyle(color: Colors.white),
+                    )),
+                image != null
+                    ? Container(
+                        height: 200,
+                        width: MediaQuery.of(context).size.width,
+                        child: Image.file(
+                          image!,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    : Container(),
                 SizedBox(
                   height: 20,
                 ),
