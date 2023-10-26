@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       onGenerateRoute: route.controller,
-      initialRoute: route.loginpage,
+      initialRoute: route.form,
     );
   }
 }
