@@ -77,6 +77,9 @@ class _FormulirState extends State<Formulir> {
       drawer: NavBar(),
       appBar: AppBar(
         title: Text('Form'),
+        centerTitle: true,
+        backgroundColor: Colors.purple.shade100,
+
       ),
       body: ListView(
         children: [

@@ -16,7 +16,7 @@ class NavBar extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               child: CircleAvatar(
                 radius: 50.0,
-                backgroundImage: AssetImage('assets/minji.jpg'),
+                backgroundImage: AssetImage('assets/Foto.jpg'),
               ),
             ),
             decoration: BoxDecoration(
@@ -32,7 +32,7 @@ class NavBar extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, route.calculator),
           ),
           ListTile(
-            leading: Icon(Icons.forum_rounded),
+            leading: Icon(Icons.upload_file_rounded),
             title: Text('Formulir'),
             onTap: () => Navigator.pushNamed(context, route.form),
           ),

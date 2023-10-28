@@ -94,7 +94,10 @@ class _CalculatorState extends State<Calculator> {
       backgroundColor: Colors.grey.shade800,
       //object yang berada di atas template/MaterialApp meliputi judul dan kontennya
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("Kalkulator Sederhana"),
+        backgroundColor: Colors.purple.shade100,
+
       ),
       body: Container(
         child: Column(
