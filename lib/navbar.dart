@@ -16,7 +16,7 @@ class NavBar extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               child: CircleAvatar(
                 radius: 50.0,
-                backgroundImage: AssetImage('assets/Foto.jpg'),
+                backgroundImage: AssetImage('assets/Foto.jpeg'),
               ),
             ),
             decoration: BoxDecoration(
